@@ -1,0 +1,42 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+.mvn
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+*/application.properties
+*/application-dev.properties
+*/application-shik.properties
+/logs
+optimus-core/src/test
+optimus-core/logs
+optimus-core/XCProxy.txt
+
+
+
+/optimus-core/src/main/resources/application-shik.properties
+/optimus-core/src/main/resources/application-dev.properties
+/optimus-core/src/test/
