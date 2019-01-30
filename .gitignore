@@ -27,16 +27,5 @@ mvnw.cmd
 /nbdist/
 /.nb-gradle/
 
-*/application.properties
-*/application-dev.properties
-*/application-shik.properties
 /logs
-optimus-core/src/test
-optimus-core/logs
-optimus-core/XCProxy.txt
-
-
-
-/optimus-core/src/main/resources/application-shik.properties
-/optimus-core/src/main/resources/application-dev.properties
-/optimus-core/src/test/
+/shik-quartz/src/test/
