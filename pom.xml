@@ -37,5 +37,8 @@
     </dependencyManagement>
 
     <modules>
+        <module>shik-schedule</module>
+        <module>shik-elastic-job</module>
+        <module>shik-quartz</module>
     </modules>
 </project>
