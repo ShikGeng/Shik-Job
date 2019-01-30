@@ -26,7 +26,7 @@ import java.util.List;
  * :注意org.quartz.threadPool.threadCount线程池中线程的数量至少要多个,否则@DisallowConcurrentExecution不生效
  * :假如Job的设置时间间隔为3秒,但Job执行时间是5秒,设置@DisallowConcurrentExecution以后程序会等任务执行完毕以后再去执行,否则会在3秒时再启用新的线程执行
  */
-@DisallowConcurrentExecution
+//@DisallowConcurrentExecution
 @Component
 public class DynamicJob implements Job {
     private Logger logger = LoggerFactory.getLogger(DynamicJob.class);
@@ -57,7 +57,7 @@ public class DynamicJob implements Job {
         logger.info("Running Job port : {} ", systemConfig.getPort());
         if(systemConfig.getPort() == 9090) {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(11000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
