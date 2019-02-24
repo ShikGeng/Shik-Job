@@ -57,7 +57,7 @@ public class DynamicJob implements Job {
         logger.info("Running Job port : {} ", systemConfig.getPort());
 //        if(systemConfig.getPort() == 9090) {
             try {
-                Thread.sleep(11000);
+                Thread.sleep(7000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

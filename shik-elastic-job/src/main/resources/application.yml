@@ -1,0 +1,11 @@
+server:
+  port: 8084
+
+regCenter:
+  serverList: 47.52.232.4:2181
+  namespace: elastic-job-demo
+
+simpleJob:
+  cron: 0/10 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=a,1=b,2=c
