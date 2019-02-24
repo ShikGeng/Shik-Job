@@ -28,3 +28,6 @@ mvnw.cmd
 /.nb-gradle/
 
 /logs
+target\
+target\
+logs\

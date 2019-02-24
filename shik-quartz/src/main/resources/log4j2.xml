@@ -51,7 +51,7 @@
     <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
     <loggers>
         <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
-        <logger name="com.rrd.teg.optimus" level="debug"></logger>
+        <logger name="cc.shik" level="debug"></logger>
         <!--<logger name="org.springframework" level="INFO"></logger>-->
         <!--<logger name="org.mybatis" level="INFO"></logger>-->
         <Root level="info">
