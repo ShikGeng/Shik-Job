@@ -2,12 +2,7 @@ package cc.shik.controller;
 
 import cc.shik.domain.JobEntity;
 import cc.shik.service.DynamicJobService;
-import org.quartz.JobDataMap;
-import org.quartz.JobDetail;
-import org.quartz.JobKey;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.TriggerKey;
+import org.quartz.*;
 import org.quartz.impl.matchers.GroupMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,10 +54,9 @@ public class JobController {
             JobDetail jobDetail = jobService.geJobDetail(jobKey, entity.getDescription(), map);
             if (entity.getStatus().equals("OPEN")) {
                 scheduler.scheduleJob(jobDetail, jobService.getTrigger(entity));
-                result = "Refresh Job : " + entity.getName() + "\t jarPath: " + entity.getJarPath() + " success !";
+                result = "Open Job : " + entity.getName() +  " success !";
             } else {
-                result = "Refresh Job : " + entity.getName() + "\t jarPath: " + entity.getJarPath() + " failed ! , " +
-                        "Because the Job status is " + entity.getStatus();
+                result = "Close Job : " + entity.getName() +  " success !";
             }
         } catch (SchedulerException e) {
             result = "Error while Refresh " + e.getMessage();
@@ -99,9 +93,27 @@ public class JobController {
             JobDetail jobDetail = jobService.geJobDetail(jobKey, job.getDescription(), map);
             if (job.getStatus().equals("OPEN")) {
                 scheduler.scheduleJob(jobDetail, jobService.getTrigger(job));
+                logger.info("Job {} open success", job.getName());
             } else {
-                logger.info("Job jump name : {} , Because {} status is {}", job.getName(), job.getName(), job.getStatus());
+                logger.info("Job {} close success", job.getName());
             }
         }
+    }
+
+    //根据ID关闭某个Job
+    @RequestMapping("/close/{id}")
+    public String close(@PathVariable Integer id) throws SchedulerException {
+        String result;
+        jobService.updateJobEntity(id,"CLOSE");
+        result = refresh(id);
+        return result;
+    }
+
+    @RequestMapping("/open/{id}")
+    public String open(@PathVariable Integer id) throws SchedulerException {
+        String result;
+        jobService.updateJobEntity(id,"OPEN");
+        result = refresh(id);
+        return result;
     }
 }

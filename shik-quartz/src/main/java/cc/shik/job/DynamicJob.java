@@ -56,11 +56,11 @@ public class DynamicJob implements Job {
         logger.info("Running Job vmParam : {} ", vmParam);
         logger.info("Running Job port : {} ", systemConfig.getPort());
 //        if(systemConfig.getPort() == 9090) {
-            try {
-                Thread.sleep(7000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(7000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 //        }
         long startTime = System.currentTimeMillis();
         if (!StringUtils.getStringUtil.isEmpty(jarPath)) {

@@ -24,6 +24,13 @@ public class DynamicJobService {
     @Autowired
     private JobEntityRepository repository;
 
+    public String updateJobEntity(Integer id, String status) {
+        JobEntity jobEntity = this.repository.getById(id);
+        jobEntity.setStatus(status);
+        repository.save(jobEntity);
+        return "success";
+    }
+
     //通过Id获取Job
     public JobEntity getJobEntityById(Integer id) {
         return repository.getById(id);
