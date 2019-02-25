@@ -42,6 +42,8 @@ public class ElasticJobConfig {
 
     @Bean(initMethod = "init")
     public ZookeeperRegistryCenter regCenter(@Value("${regCenter.serverList}") final String serverList, @Value("${regCenter.namespace}") final String namespace) {
-        return new ZookeeperRegistryCenter(new ZookeeperConfiguration(serverList, namespace));
+        ZookeeperConfiguration zookeeperConfiguration = new ZookeeperConfiguration(serverList, namespace);
+        zookeeperConfiguration.setSessionTimeoutMilliseconds(1000);
+        return new ZookeeperRegistryCenter(zookeeperConfiguration);
     }
 }
