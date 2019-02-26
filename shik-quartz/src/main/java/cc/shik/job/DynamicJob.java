@@ -48,20 +48,18 @@ public class DynamicJob implements Job {
         String parameter = map.getString("parameter");
         String vmParam = map.getString("vmParam");
         logger.info("Running Job name : {} ", map.getString("name"));
-        logger.info("Running Job description : " + map.getString("JobDescription"));
-        logger.info("Running Job group: {} ", map.getString("group"));
-        logger.info("Running Job cron : " + map.getString("cronExpression"));
-        logger.info("Running Job jar path : {} ", jarPath);
-        logger.info("Running Job parameter : {} ", parameter);
-        logger.info("Running Job vmParam : {} ", vmParam);
+//        logger.info("Running Job description : " + map.getString("JobDescription"));
+//        logger.info("Running Job group: {} ", map.getString("group"));
+//        logger.info("Running Job cron : " + map.getString("cronExpression"));
+//        logger.info("Running Job jar path : {} ", jarPath);
+//        logger.info("Running Job parameter : {} ", parameter);
+//        logger.info("Running Job vmParam : {} ", vmParam);
         logger.info("Running Job port : {} ", systemConfig.getPort());
-//        if(systemConfig.getPort() == 9090) {
-//            try {
-//                Thread.sleep(7000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         long startTime = System.currentTimeMillis();
         if (!StringUtils.getStringUtil.isEmpty(jarPath)) {
             File jar = new File(jarPath);
