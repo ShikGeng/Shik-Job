@@ -25,13 +25,13 @@ public class SimpleDemoJob implements SimpleJob {
     public void execute(ShardingContext context) {
         switch (context.getShardingItem()) {
             case 0:
-                logger.info("Job item 0 ...");
+                logger.info("Job item 0 ... parameter:{}", context.getShardingParameter());
                 break;
             case 1:
-                logger.info("Job item 1 ...");
+                logger.info("Job item 1 ... parameter:{}", context.getShardingParameter());
                 break;
             case 2:
-                logger.info("Job item 2 ...");
+                logger.info("Job item 2 ... parameter:{}", context.getShardingParameter());
                 break;
             // case n: ...
         }
