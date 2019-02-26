@@ -1,9 +1,14 @@
 package cc.shik;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimerTest extends TimerTask {
+
+    private static final Logger logger = LoggerFactory.getLogger(TimerTest.class);
 
     private String jobName = "";
 
@@ -14,7 +19,7 @@ public class TimerTest extends TimerTask {
 
     @Override
     public void run() {
-        System.out.println("execute " + jobName);
+        System.out.println("Thread name is " + Thread.currentThread().getName() + ", execute " + jobName);
     }
 
     public static void main(String[] args) {

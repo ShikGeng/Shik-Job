@@ -6,6 +6,6 @@ regCenter:
   namespace: elastic-job-demo
 
 simpleJob:
-  cron: 0/10 * * * * ?
+  cron: 0/5 * * * * ?
   shardingTotalCount: 3
   shardingItemParameters: 0=a,1=b,2=c
