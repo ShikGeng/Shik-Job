@@ -27,13 +27,12 @@ public class ShikScheduleApplication {
         SpringApplication.run(ShikScheduleApplication.class);
     }
 
-    @Scheduled(cron = "0/3 * * * * ?")
-    public void testA() throws InterruptedException {
-        Thread.sleep(2500);
+    @Scheduled(cron = "0/1 * * * * ?")
+    public void testA() {
         logger.info(" A schedule job test .....");
     }
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    @Scheduled(cron = "0/2 * * * * ?")
     public void testB() {
         logger.info(" B schedule job test .....");
     }

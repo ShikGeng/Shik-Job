@@ -2,7 +2,7 @@ server:
   port: 8084
 
 regCenter:
-  serverList: 10.205.11.70:2181
+  serverList: 127.0.0.1:2181
   namespace: elastic-job-demo
 
 simpleJob:

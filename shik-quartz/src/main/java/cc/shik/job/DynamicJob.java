@@ -55,11 +55,6 @@ public class DynamicJob implements Job {
 //        logger.info("Running Job parameter : {} ", parameter);
 //        logger.info("Running Job vmParam : {} ", vmParam);
         logger.info("Running Job port : {} ", systemConfig.getPort());
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         long startTime = System.currentTimeMillis();
         if (!StringUtils.getStringUtil.isEmpty(jarPath)) {
             File jar = new File(jarPath);
